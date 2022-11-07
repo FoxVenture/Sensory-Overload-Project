@@ -62,9 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4194d912912cc254cb1ca7b77c8bce76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugger: {fileID: 0}
+  animation: {fileID: 0}
   thisCard: {fileID: 3216560549655375750}
-  memoryGameController: {fileID: 0}
 --- !u!114 &2836191039112991127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d824112b50e5e47aa1ce5b847c18fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugger: {fileID: 0}
   isTriggered: 0
   _interactableView: {fileID: 2725732089726809195}
 --- !u!1 &4886450765100993488
@@ -283,7 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d824112b50e5e47aa1ce5b847c18fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugger: {fileID: 0}
   isTriggered: 0
   _interactableView: {fileID: 2725732089726809195}
 --- !u!1 &7440083701012396276

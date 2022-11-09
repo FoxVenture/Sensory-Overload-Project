@@ -10068,7 +10068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9051377279254939615, guid: 9684c5814484d6148ac9f823ff84f778, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9051377279254939617, guid: 9684c5814484d6148ac9f823ff84f778, type: 3}
       propertyPath: debugger
@@ -17710,7 +17710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &625696954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19727,6 +19727,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9a085abe8fe84674db4ae67259cbb8df, type: 3}
       propertyPath: m_Name
       value: Tablet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9a085abe8fe84674db4ae67259cbb8df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4253280567622488715, guid: 9a085abe8fe84674db4ae67259cbb8df, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -61554,7 +61558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2047243048
 RectTransform:
   m_ObjectHideFlags: 0

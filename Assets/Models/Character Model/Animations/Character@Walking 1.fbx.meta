@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 686968e5cfdda3947a5c9ade23965c5e
+guid: 12d119136df33bb41812887da87b986f
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Walking While Texting(1)
+    second: Walking 1
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,18 +36,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walking While Texting(1)
+      name: Walking 1
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 171
+      lastFrame: 41
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

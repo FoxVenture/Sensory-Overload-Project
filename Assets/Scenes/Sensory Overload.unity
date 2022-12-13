@@ -359,7 +359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &722269527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -408,16 +408,17 @@ MonoBehaviour:
     dump of memory..
 
 
+    Creator - Jowelle Vos
+
     Script_co-writer - Chris Burazer
 
-    Voice_actor_Chris
+    Voice_Chris
     - Nathan Fernandez
 
-    Voice_actor_classmate_jay - Ben Kramer
+    Voice_classmate_jay - Ben Kramer
 
 
-    Memory dump
-    complete.
+    Memory dump complete.
 
 '
   m_isRightToLeft: 0
@@ -941,7 +942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1849110204
 RectTransform:
   m_ObjectHideFlags: 0

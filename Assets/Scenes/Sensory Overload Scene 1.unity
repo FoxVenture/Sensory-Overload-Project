@@ -292,6 +292,7 @@ Transform:
   - {fileID: 492230853}
   - {fileID: 1605827845}
   - {fileID: 701995189}
+  - {fileID: 525927480}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1690,6 +1691,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7082008644801035522, guid: a7ddd5b3ae564714c9433f6e40ba8ac8, type: 3}
   m_PrefabInstance: {fileID: 7077242128841780388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &525927479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525927480}
+  - component: {fileID: 525927481}
+  m_Layer: 0
+  m_Name: Timeline - Start (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &525927480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525927479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 117345166}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &525927481
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525927479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 33b075efbfebb414d9effcd1d40207e0, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 2456965858892607917, guid: 33b075efbfebb414d9effcd1d40207e0, type: 2}
+    value: {fileID: 1645477642}
+  - key: {fileID: -6166237024411546602, guid: 33b075efbfebb414d9effcd1d40207e0, type: 2}
+    value: {fileID: 1076498096}
+  - key: {fileID: -6088352343072939272, guid: 33b075efbfebb414d9effcd1d40207e0, type: 2}
+    value: {fileID: 1645477642}
+  - key: {fileID: -5647144232958447804, guid: 33b075efbfebb414d9effcd1d40207e0, type: 2}
+    value: {fileID: 1076498096}
+  - key: {fileID: -2711668217841954163, guid: 33b075efbfebb414d9effcd1d40207e0, type: 2}
+    value: {fileID: 826600853}
+  m_ExposedReferences:
+    m_References: []
 --- !u!4 &527165414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4613907555641390, guid: 3dff328fdba649c44a1d608ec75217d7, type: 3}

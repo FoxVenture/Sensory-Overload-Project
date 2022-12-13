@@ -13,7 +13,7 @@ public class NPC_HeadLook : MonoBehaviour
     void Start()
     {
         SetInitialReferences();
-        activateLookAt = false;
+        activateLookAt = true;
     }
 
     void SetInitialReferences()

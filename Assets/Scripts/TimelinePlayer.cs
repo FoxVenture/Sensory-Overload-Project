@@ -5,31 +5,9 @@ using UnityEngine.Playables;
 
 public class TimelinePlayer : MonoBehaviour
 {
-    /*
-    private PlayableDirector director;
-    public GameObject controlPanel;
-    */
 
-    [SerializeField] bool Timeline_1, Timeline_2, Timeline_3 = false;
-    [SerializeField] PlayableDirector TimelineObj_1, TimelineObj_2, TimelineObj_3;
-
-    /*
-    private void Awake()
-    {
-        director = GetComponent<PlayableDirector>();
-        director.played += Director_Played;
-        director.stopped += Director_Stopped;
-    }
-    private void Director_Stopped(PlayableDirector obj)
-    {
-        controlPanel.SetActive(true);
-    }
-
-    private void Director_Played(PlayableDirector obj)
-    {
-        controlPanel.SetActive(false);
-    }
-    */
+    [SerializeField] bool Timeline_1, Timeline_2 = false; //, Timeline_3 = false;
+    [SerializeField] PlayableDirector TimelineObj_1, TimelineObj_2; //, TimelineObj_3;
 
     public void StartTimeline(PlayableDirector director)
     {
@@ -49,11 +27,12 @@ public class TimelinePlayer : MonoBehaviour
             StartTimeline(TimelineObj_2);
             Timeline_2 = false;
         }
-
+        /*
         if (Timeline_3 == true)
         {
             StartTimeline(TimelineObj_3);
             Timeline_3 = false;
         }
+        */
     }
 }

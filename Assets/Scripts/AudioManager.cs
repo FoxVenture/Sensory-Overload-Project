@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
 
     public bool MouseScroll, PenTapping, PenClickIn, KeyboardTyping, SmartphoneCall = false;
 
+
+    public bool groupWalla_1, groupWalla_2, groupWalla_3, groupWalla_4, womenLaughing = false;
+
     void Awake()
     {
         if(instance == null)
@@ -36,6 +39,12 @@ public class AudioManager : MonoBehaviour
         if (PenTapping == true) Play("Pen Tapping");
         if (PenClickIn == true) Play("Pen Click In");
         if (KeyboardTyping == true) Play("Keyboard Typing");
+
+        if (groupWalla_1 == true) Play("Highschool Ambience");
+        if (groupWalla_2 == true) Play("Highschool Ambience 2");
+        if (groupWalla_3 == true) Play("Party Walla");
+        if (groupWalla_4 == true) Play("Party Walla 2");
+        if (womenLaughing == true) Play("Women Laughing");
     }
 
     public void Play (string name)

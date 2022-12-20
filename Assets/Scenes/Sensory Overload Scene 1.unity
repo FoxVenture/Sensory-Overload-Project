@@ -2767,7 +2767,6 @@ MonoBehaviour:
   audio: {fileID: 1268488690}
   lookAtCollider: {fileID: 1950985047}
   tabletLookAtColliger: {fileID: 1333084300}
-  tabletLook: 0
 --- !u!1 &121392518
 GameObject:
   m_ObjectHideFlags: 0

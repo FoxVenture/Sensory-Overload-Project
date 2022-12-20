@@ -15,8 +15,17 @@ public class GameSequence : MonoBehaviour
         tabletlook = false;
         audioNPCnames = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3" };
     }
+    private bool Sequence_One()
+    {
+        //play timeline
 
-    private bool Sequence_Two()
+        //After timeline:
+        lookAtCollider.active = true;
+        tabletLookAtColliger.active = true;
+        return true;
+    }
+
+        private bool Sequence_Two()
     {
         lookAtCollider.active = true;
         tabletLookAtColliger.active = true;
@@ -35,6 +44,7 @@ public class GameSequence : MonoBehaviour
                 playAudio(audioNPCnames[audioNr]);
                 audioNr++;
             }
+            WaitForRepeat();
         }
 
         return false;
@@ -55,5 +65,10 @@ public class GameSequence : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    IEnumerator WaitForRepeat()
+    {
+        yield return new WaitForSeconds(5);
     }
 }

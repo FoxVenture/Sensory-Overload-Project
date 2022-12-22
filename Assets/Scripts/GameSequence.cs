@@ -7,13 +7,14 @@ public class GameSequence : MonoBehaviour
     [SerializeField] AudioManager audio;
     [SerializeField] GameObject lookAtCollider, tabletLookAtColliger;
 
-    private bool tabletlook;
+    [SerializeField] bool tabletlook;
     private string[] audioNPCnames;
 
     private void Start()
     {
         tabletlook = false;
         audioNPCnames = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3" };
+        Sequence_Two();
     }
     private bool Sequence_One()
     {

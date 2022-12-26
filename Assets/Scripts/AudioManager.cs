@@ -47,17 +47,23 @@ public class AudioManager : MonoBehaviour
         if (womenLaughing == true) Play("Women Laughing");
     }
 
-    public void Play (string name)
+    public Sound Play (string name)
     {
         Sound s = Array.Find(sounds, s => s.name == name);
-        if (s.source.isPlaying) return;
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + "not found!");
-            return;
+            return null;
         }
-            s.source.Play();
-        
+        s.source.Play();
+
+        return s;
+
     }
 
+    IEnumerator PlayWait(Sound s)
+    {
+        s.source.Play();
+        yield return new WaitWhile(() => s.source.isPlaying);
+    }
 }

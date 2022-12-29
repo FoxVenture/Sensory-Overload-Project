@@ -81,6 +81,8 @@ namespace Kino
 
         float _verticalJumpTime;
 
+        bool _effectActive = false;
+
         #endregion
 
         #region MonoBehaviour Functions
@@ -113,5 +115,21 @@ namespace Kino
         }
 
         #endregion
+
+        #region Public Methodes
+        public void SetJitter(float nr)
+        {
+            _scanLineJitter = nr;
+        }
+        public void ActivateJitter(float nr)
+        {
+            _scanLineJitter = nr;
+
+        }
+
+
+        #endregion
     }
+
+
 }

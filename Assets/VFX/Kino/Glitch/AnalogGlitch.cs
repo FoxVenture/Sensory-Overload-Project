@@ -31,6 +31,9 @@ namespace Kino
     {
         #region Public Properties
 
+
+        [SerializeField] bool _effectActive = false;
+
         // Scan line jitter
 
         [SerializeField, Range(0, 1)]
@@ -81,7 +84,7 @@ namespace Kino
 
         float _verticalJumpTime;
 
-        bool _effectActive = false;
+        //bool _effectActive = false;
 
         #endregion
 
@@ -89,43 +92,37 @@ namespace Kino
 
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
-            if (_material == null)
-            {
-                _material = new Material(_shader);
-                _material.hideFlags = HideFlags.DontSave;
-            }
-
-            _verticalJumpTime += Time.deltaTime * _verticalJump * 11.3f;
-
-            var sl_thresh = Mathf.Clamp01(1.0f - _scanLineJitter * 1.2f);
-            var sl_disp = 0.002f + Mathf.Pow(_scanLineJitter, 3) * 0.05f;
-            _material.SetVector("_ScanLineJitter", new Vector2(sl_disp, sl_thresh));
             
-            /*
-            var vj = new Vector2(_verticalJump, _verticalJumpTime);
-            _material.SetVector("_VerticalJump", vj);
+                if (_material == null)
+                {
+                    _material = new Material(_shader);
+                    _material.hideFlags = HideFlags.DontSave;
+                }
 
-            _material.SetFloat("_HorizontalShake", _horizontalShake * 0.2f);
-            */
+                //_verticalJumpTime += Time.deltaTime * _verticalJump * 11.3f;
 
-            var cd = new Vector2(_colorDrift * 0.04f, Time.time * 20f);
-            _material.SetVector("_ColorDrift", cd);
+                var sl_thresh = Mathf.Clamp01(1.0f - _scanLineJitter * 1.2f);
+                var sl_disp = 0.002f + Mathf.Pow(_scanLineJitter, 3) * 0.05f;
+                _material.SetVector("_ScanLineJitter", new Vector2(sl_disp, sl_thresh));
 
-            Graphics.Blit(source, destination, _material);
+                /*
+                var vj = new Vector2(_verticalJump, _verticalJumpTime);
+                _material.SetVector("_VerticalJump", vj);
+
+                _material.SetFloat("_HorizontalShake", _horizontalShake * 0.2f);
+                */
+
+                var cd = new Vector2(_colorDrift * 0.04f, Time.time * 20f);
+                _material.SetVector("_ColorDrift", cd);
+            
+                Graphics.Blit(source, destination, _material);
+            
         }
 
         #endregion
 
         #region Public Methodes
-        public void SetJitter(float nr)
-        {
-            _scanLineJitter = nr;
-        }
-        public void ActivateJitter(float nr)
-        {
-            _scanLineJitter = nr;
-
-        }
+        
 
 
         #endregion

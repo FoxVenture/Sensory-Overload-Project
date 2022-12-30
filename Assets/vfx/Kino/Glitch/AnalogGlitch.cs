@@ -31,6 +31,9 @@ namespace Kino
     {
         #region Public Properties
 
+
+        [SerializeField] bool _effectActive = false;
+
         // Scan line jitter
 
         [SerializeField, Range(0, 1)]
@@ -81,35 +84,49 @@ namespace Kino
 
         float _verticalJumpTime;
 
+        //bool _effectActive = false;
+
         #endregion
 
         #region MonoBehaviour Functions
 
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
-            if (_material == null)
-            {
-                _material = new Material(_shader);
-                _material.hideFlags = HideFlags.DontSave;
-            }
+            
+                if (_material == null)
+                {
+                    _material = new Material(_shader);
+                    _material.hideFlags = HideFlags.DontSave;
+                }
 
-            _verticalJumpTime += Time.deltaTime * _verticalJump * 11.3f;
+                //_verticalJumpTime += Time.deltaTime * _verticalJump * 11.3f;
 
-            var sl_thresh = Mathf.Clamp01(1.0f - _scanLineJitter * 1.2f);
-            var sl_disp = 0.002f + Mathf.Pow(_scanLineJitter, 3) * 0.05f;
-            _material.SetVector("_ScanLineJitter", new Vector2(sl_disp, sl_thresh));
+                var sl_thresh = Mathf.Clamp01(1.0f - _scanLineJitter * 1.2f);
+                var sl_disp = 0.002f + Mathf.Pow(_scanLineJitter, 3) * 0.05f;
+                _material.SetVector("_ScanLineJitter", new Vector2(sl_disp, sl_thresh));
 
-            var vj = new Vector2(_verticalJump, _verticalJumpTime);
-            _material.SetVector("_VerticalJump", vj);
+                /*
+                var vj = new Vector2(_verticalJump, _verticalJumpTime);
+                _material.SetVector("_VerticalJump", vj);
 
-            _material.SetFloat("_HorizontalShake", _horizontalShake * 0.2f);
+                _material.SetFloat("_HorizontalShake", _horizontalShake * 0.2f);
+                */
 
-            var cd = new Vector2(_colorDrift * 0.04f, Time.time * 606.11f);
-            _material.SetVector("_ColorDrift", cd);
-
-            Graphics.Blit(source, destination, _material);
+                var cd = new Vector2(_colorDrift * 0.04f, Time.time * 20f);
+                _material.SetVector("_ColorDrift", cd);
+            
+                Graphics.Blit(source, destination, _material);
+            
         }
 
         #endregion
+
+        #region Public Methodes
+        
+
+
+        #endregion
     }
+
+
 }

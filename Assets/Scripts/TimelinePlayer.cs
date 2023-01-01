@@ -6,10 +6,10 @@ using UnityEngine.Playables;
 public class TimelinePlayer : MonoBehaviour
 {
 
-    [SerializeField] bool Timeline_1, Timeline_2 = false; //, Timeline_3 = false;
+    [SerializeField] bool Timeline_1, Timeline_2 = false, Timeline_3 = false;
     [SerializeField] bool groupWalla_1, groupWalla_2, groupWalla_3, groupWalla_4, groupWalla_5 = false;
 
-    [SerializeField] PlayableDirector TimelineObj_1, TimelineObj_2; //, TimelineObj_3;
+    [SerializeField] PlayableDirector TimelineObj_1, TimelineObj_2, TimelineObj_3;
     [SerializeField] GameObject aClip1, aClip2, aClip3, aClip4, aClip5;
 
     public void StartTimeline(PlayableDirector director)
@@ -39,13 +39,12 @@ public class TimelinePlayer : MonoBehaviour
             StartTimeline(TimelineObj_2);
             Timeline_2 = false;
         }
-        /*
+        
         if (Timeline_3 == true)
         {
             StartTimeline(TimelineObj_3);
             Timeline_3 = false;
         }
-        */
 
         if (groupWalla_1 == true)
         {

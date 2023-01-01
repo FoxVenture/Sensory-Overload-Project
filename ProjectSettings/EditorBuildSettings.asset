@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Memory Game.unity
-    guid: f6cfa180e8bb13945953629d82163542
+    path: Assets/Scenes/Main Menu.unity
+    guid: d544dd01468bc074592e6bebc8e457cd
+  - enabled: 1
+    path: Assets/Scenes/Sensory Overload Scene.unity
+    guid: 1372c89c48e390440a8a0b6c5b6dc810
+  - enabled: 1
+    path: Assets/Scenes/Credit End Scene.unity
+    guid: 0a124e9d42c95e04e82bc24f28146df6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 863b9092a7144114685d234a5ae39fa9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f2cd3da7aa699d240852133b8f336e0c, type: 2}

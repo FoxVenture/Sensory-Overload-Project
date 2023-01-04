@@ -6,6 +6,8 @@ public class EffectController : MonoBehaviour
 {
     [SerializeField] bool effectScriptActive, jitter1, jitter2;
     [SerializeField] Kino.AnalogGlitch effectScript;
+
+    Light lightEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,7 @@ public class EffectController : MonoBehaviour
         effectScript.enabled = false;
         SetJitter(0);
         SetDrift(0);
+        lightEffect = GetComponent<Light>();
     }
 
     public void SetJitter(float nr)
@@ -57,5 +60,9 @@ public class EffectController : MonoBehaviour
         effectScriptActive = true;
     }
 
+    public void IncreaseLightBrightness()
+    {
+        lightEffect.intensity = Mathf.PingPong(Time.time, 8);
+    }
 
 }

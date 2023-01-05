@@ -8,11 +8,11 @@ public class MainMenuManager : MonoBehaviour
     TimelinePlayer tPlayer;
     AudioManager audioManager;
     
-
     public bool buttonClick_1, buttonClick_2;
 
     void Start()
     {
+        Debug.Log("MANAGER STARTED");
         tPlayer = GetComponent<TimelinePlayer>();
         audioManager = GetComponent<AudioManager>();
         PlayTimeline(tL_1);

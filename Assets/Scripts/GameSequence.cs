@@ -6,40 +6,46 @@ public class GameSequence : MonoBehaviour
 {
     [SerializeField] AudioManager audio;
     [SerializeField] bool audio1, audio2, audio3;
-    private string[] audioNPCnames;
-    public bool tabletlook;
+    [SerializeField] GameObject NPC;
+    Animator animator;
+    private string[] audioTabletLook;
+    private string[] audioEmailLook;
+    public bool interacted;
 
     int audioNr = 0;
     int sequenceNr;
 
     private void Start()
     {
+        animator = NPC.GetComponent<Animator>();
         audio1 = false;
         audio2 = false;
         audio3 = false;
-        tabletlook = false;
-        audioNPCnames = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3", "Chris_audio_1", "Chris_audio_2", "Chris_audio_3" };
+        interacted = false;
+        audioTabletLook = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3" };
+        audioEmailLook = new string[] { "Chris_audio_1", "Chris_audio_2", "Chris_audio_3" };
         sequenceNr = 1;
-        Sequence_Two();
 
     }
+    //Timeline 1
     private void Sequence_One()
     {
-        //play timeline
-
     }
 
-    private void Sequence_Two()
+    //Audio Classmate look at tablet
+    private void PlaySequence_Two()
     {
         if (audioNr == 2)
         {
-            playAudio(audioNPCnames[audioNr]);
+            animator.SetTrigger("HardNod");
+            playAudio(audioTabletLook[audioNr]);
             audioNr = 0;
 
         }
         else
         {
-            playAudio(audioNPCnames[audioNr]);
+            animator.SetTrigger("HardNod");
+            playAudio(audioTabletLook[audioNr]);
             audioNr++;
 
         }
@@ -47,46 +53,66 @@ public class GameSequence : MonoBehaviour
         StartCoroutine(WaitForRepeat());
 
     }
-    public void TabletLookTrue()
-    {
-        tabletlook = true;
-    }
 
-    private void Sequence_Three()
+    //Audio Player check Email
+    private void PlaySequence_Three()
     {
-        if (audioNr == 5)
+        if (audioNr == 1)
         {
-            playAudio(audioNPCnames[audioNr]);
-            audioNr = 3;
+            playAudio(audioEmailLook[audioNr]);
+            audioNr = 0;
 
         }
         else
         {
-            playAudio(audioNPCnames[audioNr]);
+            playAudio(audioEmailLook[audioNr]);
             audioNr++;
 
         }
 
         StartCoroutine(WaitForRepeat());
+    }
+
+    public void InteractedTrue()
+    {
+        interacted = true;
     }
 
     private void playAudio(string name)
     {
         audio.Play(name);
     }
+    public void PlaySequence()
+    {
+        if(sequenceNr == 0)
+        {
+            sequenceNr++;
+            StartCoroutine(WaitForRepeat());
+        }
+        if(sequenceNr == 1)
+        {
+            PlaySequence_Two();
+        }
+        if(sequenceNr == 2)
+        {
+            PlaySequence_Three();
+        }
+        if(sequenceNr==3)
+        { }
+    }
 
     IEnumerator WaitForRepeat()
     {
-        yield return new WaitForSeconds(5);
-        if (!tabletlook)
+        yield return new WaitForSeconds(10);
+        if (!interacted)
         {
-            Sequence_Two();
+            PlaySequence();
         }
         else
         {
-            audioNr = 3;
-            tabletlook = false;
-            Sequence_Three();
+            interacted = false;
+            sequenceNr++;
+            PlaySequence();
         }
     }
 

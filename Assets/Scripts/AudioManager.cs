@@ -49,9 +49,9 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
-    public void PlayUI(string name)
+    public void PlayUI()
     {
-        Sound s = Array.Find(UIsounds, s => s.name == name);
+        Sound s = Array.Find(UIsounds, s => s.name == "UISound");
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + "not found!");

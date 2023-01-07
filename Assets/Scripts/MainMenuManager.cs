@@ -20,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(buttonClick_1 == true)
         { 
             buttonClick_1 = false;
@@ -31,6 +32,7 @@ public class MainMenuManager : MonoBehaviour
             buttonClick_2 = false;
             PlayTimeline(tL_2);
         }
+        */
     }
 
     public void PlayTimeline(GameObject i)

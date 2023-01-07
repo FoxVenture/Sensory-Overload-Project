@@ -18,10 +18,12 @@ public class FadeScreen : MonoBehaviour
     public void FadeIn()
     {
         Fade(1, 0);
+        rend.enabled = false;
     }
 
     public void FadeOut()
     {
+        rend.enabled = true;
         Fade(0, 1);
     }    
 

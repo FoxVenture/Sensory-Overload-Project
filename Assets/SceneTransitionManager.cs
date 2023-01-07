@@ -11,6 +11,11 @@ public class SceneTransitionManager : MonoBehaviour
     {
         StartCoroutine(GoToSceneRoutine(sceneIndex));
     } 
+    public void QuickFadeToScene(int sceneIndex)
+    {
+        fadeScreen.fadeDuration = 0;
+        StartCoroutine(GoToSceneRoutine(sceneIndex));
+    }
     IEnumerator GoToSceneRoutine(int sceneIndex)
     {
         fadeScreen.FadeOut();

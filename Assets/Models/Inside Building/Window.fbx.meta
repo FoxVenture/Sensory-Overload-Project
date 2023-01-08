@@ -3,7 +3,22 @@ guid: a0afa3747a93c7d45828b627a64262a1
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Glass
+    second: {fileID: 2100000, guid: b7546d375f5caa5468289e70ca8b717f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Metal_Frame
+    second: {fileID: 2100000, guid: a88b41131f9866243a2e1113e550c74a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Metal_Frame_lighter
+    second: {fileID: 5227473300995205094, guid: e9a0fb92c5094a847b5d7c2fe28420cd, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

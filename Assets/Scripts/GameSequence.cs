@@ -5,82 +5,115 @@ using UnityEngine;
 public class GameSequence : MonoBehaviour
 {
     [SerializeField] AudioManager audio;
-
-    [SerializeField] bool tabletlook;
     [SerializeField] bool audio1, audio2, audio3;
-    [SerializeField] int audioNr=0;
-    private string[] audioNPCnames;
+    [SerializeField] GameObject NPC;
+    Animator animator;
+    private string[] audioTabletLook;
+    private string[] audioEmailLook;
+    public bool interacted;
 
+    int audioNr = 0;
     int sequenceNr;
 
     private void Start()
     {
+        animator = NPC.GetComponent<Animator>();
         audio1 = false;
         audio2 = false;
         audio3 = false;
-        tabletlook = false;
-        audioNPCnames = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3" };
+        interacted = false;
+        audioTabletLook = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3" };
+        audioEmailLook = new string[] { "Chris_audio_1", "Chris_audio_2", "Chris_audio_3" };
         sequenceNr = 1;
-        //Sequence_Two();
 
     }
-    private bool Sequence_One()
+    //Timeline 1
+    private void Sequence_One()
     {
-        //play timeline
-
-        return true;
     }
 
-    private bool Sequence_Two()
+    //Audio Classmate look at tablet
+    private void PlaySequence_Two()
     {
-       
-        //ADD WAIT X SECONDS
-        int audioNr = 0;
-
-        while(!tabletlook)
+        if (audioNr == 2)
         {
-            if(audioNr == 2)
-            {
-                playAudio(audioNPCnames[audioNr]);
-                audioNr = 0;
-            }
-            else
-            {
-                playAudio(audioNPCnames[audioNr]);
-                audioNr++;
-            }
-            WaitForRepeat();
+            animator.SetTrigger("HardNod");
+            playAudio(audioTabletLook[audioNr]);
+            audioNr = 0;
+
         }
-
-        return false;
-    }
-
-    private void Update()
-    {
-        if (tabletlook == true)
+        else
         {
-            tabletlook = false;
-            playAudio(audioNPCnames[audioNr]);
+            animator.SetTrigger("HardNod");
+            playAudio(audioTabletLook[audioNr]);
             audioNr++;
+
         }
+
+        StartCoroutine(WaitForRepeat());
+
     }
 
+    //Audio Player check Email
+    private void PlaySequence_Three()
+    {
+        if (audioNr == 1)
+        {
+            playAudio(audioEmailLook[audioNr]);
+            audioNr = 0;
+
+        }
+        else
+        {
+            playAudio(audioEmailLook[audioNr]);
+            audioNr++;
+
+        }
+
+        StartCoroutine(WaitForRepeat());
+    }
+
+    public void InteractedTrue()
+    {
+        interacted = true;
+    }
 
     private void playAudio(string name)
     {
-        PlayWait(audio.Play(name));
-        Debug.Log("TESTING: YAAAY IT WAITED");
+        audio.Play(name);
+    }
+    public void PlaySequence()
+    {
+        if(sequenceNr == 0)
+        {
+            sequenceNr++;
+            StartCoroutine(WaitForRepeat());
+        }
+        if(sequenceNr == 1)
+        {
+            PlaySequence_Two();
+        }
+        if(sequenceNr == 2)
+        {
+            PlaySequence_Three();
+        }
+        if(sequenceNr==3)
+        { }
     }
 
     IEnumerator WaitForRepeat()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
+        if (!interacted)
+        {
+            PlaySequence();
+        }
+        else
+        {
+            interacted = false;
+            sequenceNr++;
+            PlaySequence();
+        }
     }
 
-    IEnumerator PlayWait(Sound s)
-    {
-        Debug.Log("TESTING: coroutine start");
-        yield return new WaitWhile(() => s.source.isPlaying);
-        Debug.Log("TESTING: coroutine done");
-    }
 }

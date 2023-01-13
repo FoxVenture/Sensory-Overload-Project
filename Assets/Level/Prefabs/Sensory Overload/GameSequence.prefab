@@ -120,22 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4eace529da3b44f8415faafa998c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timeline_1: 0
-  Timeline_2: 0
-  Timeline_3: 0
-  groupWalla_1: 0
-  groupWalla_2: 0
-  groupWalla_3: 0
-  groupWalla_4: 0
-  groupWalla_5: 0
-  TimelineObj_1: {fileID: 5396629774716444102}
-  TimelineObj_2: {fileID: 5396629775597198774}
-  TimelineObj_3: {fileID: 0}
-  aClip1: {fileID: 5396629776591506234}
-  aClip2: {fileID: 5396629775129757483}
-  aClip3: {fileID: 5396629775191552956}
-  aClip4: {fileID: 5396629776645878668}
-  aClip5: {fileID: 5396629775329128100}
 --- !u!114 &5396629775113342608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,11 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 5396629776096582898}
-  tabletlook: 0
   audio1: 0
   audio2: 0
   audio3: 0
-  audioNr: 0
+  NPC: {fileID: 0}
+  interacted: 0
 --- !u!1 &5396629775129757483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,17 +1015,8 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 5396629776648266650}
+  UIsounds: []
   instance: {fileID: 0}
-  MouseScroll: 0
-  PenTapping: 0
-  PenClickIn: 0
-  KeyboardTyping: 0
-  SmartphoneCall: 0
-  groupWalla_1: 0
-  groupWalla_2: 0
-  groupWalla_3: 0
-  groupWalla_4: 0
-  womenLaughing: 0
 --- !u!1 &5396629776203773094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,6 +1659,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3910488433808002066, guid: 57bab5a9735038444a5500a165da6cc4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 5992439632162517521, guid: 57bab5a9735038444a5500a165da6cc4, type: 3}
       propertyPath: m_Name
       value: Ceiling Light
@@ -1696,6 +1675,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6138794782538783441, guid: 57bab5a9735038444a5500a165da6cc4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57bab5a9735038444a5500a165da6cc4, type: 3}
 --- !u!108 &2204261926660270137 stripped

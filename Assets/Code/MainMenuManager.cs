@@ -12,7 +12,6 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("MANAGER STARTED");
         tPlayer = GetComponent<TimelinePlayer>();
         audioManager = GetComponent<AudioManager>();
         PlayTimeline(tL_1);

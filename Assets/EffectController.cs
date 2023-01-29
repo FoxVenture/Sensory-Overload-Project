@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EffectController : MonoBehaviour
 {
+    // This script controls the visual effects the player sees.
+    // These are called in the timeline using signals.
+
     [SerializeField] bool effectScriptActive, jitter1, jitter2;
     [SerializeField] Kino.AnalogGlitch effectScript;
 
@@ -18,11 +21,13 @@ public class EffectController : MonoBehaviour
         //lightEffect = GetComponent<Light>();
     }
 
+    // Change the intensity of the jitter effect.
     public void SetJitter(float nr)
     {
         effectScript.scanLineJitter = nr;
     }
 
+    // Change the intensity of the colordrift effect.
     private void SetDrift(float nr)
     {
         //effectScript.colorDrift = Mathf.Lerp(effectScript.colorDrift, nr, Time.time/3);
@@ -60,12 +65,5 @@ public class EffectController : MonoBehaviour
         SetDrift(effectScript.colorDrift+draft);
         effectScriptActive = true;
     }
-
-    public void EnableDraftpingpong(float draft)
-    {
-        SetDrift(draft);
-        effectScriptActive = true;
-    }
-
 
 }

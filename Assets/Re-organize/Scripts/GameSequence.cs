@@ -50,8 +50,14 @@ public class GameSequence : MonoBehaviour
 
         }
 
+        if (!interacted) StartCoroutine(WaitForRepeat());
+        else
+        {
+            interacted = false;
+            sequenceNr++;
+            PlaySequence();
+        }
         StartCoroutine(WaitForRepeat());
-
     }
 
     //Audio Player check Email
@@ -67,9 +73,14 @@ public class GameSequence : MonoBehaviour
         {
             playAudio(audioEmailLook[audioNr]);
             audioNr++;
-
         }
-
+        if (!interacted) StartCoroutine(WaitForRepeat());
+        else
+        {
+            interacted = false;
+            sequenceNr++;
+            PlaySequence();
+        }
         StartCoroutine(WaitForRepeat());
     }
 
@@ -82,6 +93,7 @@ public class GameSequence : MonoBehaviour
     {
         audio.Play(name);
     }
+
     public void PlaySequence()
     {
         if(sequenceNr == 0)
@@ -98,7 +110,9 @@ public class GameSequence : MonoBehaviour
             PlaySequence_Three();
         }
         if(sequenceNr==3)
-        { }
+        {
+            //Keep empty to stop.
+        }
     }
 
     IEnumerator WaitForRepeat()

@@ -22,7 +22,7 @@ public class GameSequence : MonoBehaviour
         audio2 = false;
         audio3 = false;
         interacted = false;
-        audioTabletLook = new string[] { "NPC_audio_1", "NPC_audio_2", "NPC_audio_3" };
+        audioTabletLook = new string[] { "NPC_audio_1", "NPC_audio_2" };
         audioEmailLook = new string[] { "Chris_audio_1", "Chris_audio_2", "Chris_audio_3" };
         sequenceNr = 1;
 
